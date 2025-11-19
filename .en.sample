@@ -1,0 +1,7 @@
+
+SECRET_KEY=replace_this_with_a_random_secret
+RAZORPAY_KEY_ID=rzp_test_10711624c86024c7d1490
+RAZORPAY_KEY_SECRET=rzp_test_ba7fa272d710a72edf7e2904b65d33_34e95747
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=admin
+DATABASE_URL=sqlite:///database.db
