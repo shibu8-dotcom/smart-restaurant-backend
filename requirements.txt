@@ -8,5 +8,6 @@ gunicorn==21.2.0
 razorpay==1.0.0
 
 python-dotenv==1.0.0
+setuptools==68.0.0
 
 
