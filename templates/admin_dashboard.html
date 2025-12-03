@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head><title>Admin Dashboard</title></head>
+  <body>
+    <h1>Admin Dashboard</h1>
+    <p><a href="/admin/logout">Logout</a></p>
+
+    <h3>Add Menu Item</h3>
+    <form action="/admin/menu/add" method="POST">
+      <input name="name" placeholder="Name" required>
+      <input name="category" placeholder="Category" required>
+      <input name="price" type="number" placeholder="Price" required>
+      <button type="submit">Add</button>
+    </form>
+
+    <h3>Menu Items</h3>
+    <ul>
+      {% for it in items %}
+        <li>{{ it.name }} - ₹{{ it.price }} - <a href="/admin/menu/toggle/{{ it.id }}">Toggle</a> | <a href="/admin/menu/delete/{{ it.id }}">Delete</a></li>
+      {% endfor %}
+    </ul>
+
+    <h3>Orders</h3>
+    <ul>
+      {% for o in orders %}
+        <li>Order #{{ o.id }} | Table: {{ o.table_no }} | Total: ₹{{ o.total }} | Paid: {{ 'Yes' if o.paid else 'No' }} |
+          <a href="/admin/order/bill/{{ o.id }}">Download Bill</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
